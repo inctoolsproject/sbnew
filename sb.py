@@ -160,13 +160,13 @@ while True:
             if op.type == 22:
                 print ("[ 22 ] NOTIFIED INVITE INTO ROOM")
                 if settings["autoLeave"] == True:
-                    client.sendMessage(op.param1, "Goblok ngapain invite gw")
+                    client.sendMessage(op.param1, "Terimakasih udah invite")
                     client.leaveRoom(op.param1)
 
             if op.type == 24:
                 print ("[ 24 ] NOTIFIED LEAVE ROOM")
                 if settings["autoLeave"] == True:
-                    client.sendMessage(op.param1, "Goblok ngapain invite gw")
+                    client.sendMessage(op.param1, "Sampai Jumpa lg")
                     client.leaveRoom(op.param1)
                     
             if op.type == 26:
@@ -175,7 +175,7 @@ while True:
                     if msg.toType == 2:
                         may = client.getProfile().mid
                         if may in str(msg.contentMetadata) and 'MENTION' in str(msg.contentMetadata):
-                            pilih = ['yang tag sy semoga jomblo seumur hidup','ngapain tag tag woe, kangen?','ada apa ini? ko di tag?','duhh kena tag, dianya kesepian kali yah','gk usah tag, gift tikel aja']
+                            pilih = ['yang tag saya berarti kangen','duhh kena tag, kangen yah','yang di tag masih tidur','yang di tag lg make up, biar cantik dikit','jngn tag dulu, tanggung lg beol (>.<)']
                             rslt = random.choice(pilih)
                             client.sendText(msg.to, str(rslt))
                         else:
@@ -185,7 +185,7 @@ while True:
                 else:
                     pass
             if op.type == 15:
-                client.sendText(op.param1,"Good Bye " + client.getContact(op.param2).displayName +  "\nSee You Next Time . . . (p′︵‵。) 🤗")
+                client.sendText(op.param1,"Sampai Jumpa lg " + client.getContact(op.param2).displayName +  "\nHati-hati dijalan . . . (p′︵‵。) 🤗")
                 client.inviteIntoGroup(op.param1,[op.param2])
                 print ("MEMBER HAS LEFT THE GROUP")
             if op.type == 17:
@@ -193,7 +193,7 @@ while True:
                 contact = client.getContact(op.param2)
                 image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
                 client.sendImageWithURL(op.param1,image)
-                client.sendText(op.param1,"Hay    "+client.getContact(op.param2).displayName +"\nWelcome to"+"\nGroup》》"+ str(ginfo.name))
+                client.sendText(op.param1,"Hallo kak  "+client.getContact(op.param2).displayName +"\nSELAMAT DATANG DI ROOM "+ str(ginfo.name) +"\nJNGN LUPA ISI BIODATA DI NOTE YG TELAH DI SEDIAKAN "+"\nSERTA MASUKAN SS KELOLOSAN KE ALBUM")
             if op.type == 25:
                 msg = op.message
                 text = msg.text
@@ -256,7 +256,7 @@ while True:
                                         test = st[i]
                                         result = test['post']['postInfo']['postId']
                                         channel.like(str(sender), str(result), likeType=random.choice(typel))
-                                        channel.comment(str(sender), str(result), 'Auto Like by nrik')
+                                        channel.comment(str(sender), str(result), 'Auto Like by 666')
                                     client.sendText(receiver, 'Done Like+Comment '+str(len(st))+' Post From' + str(s))
                                 except Exception as e:
                                     client.sendText(receiver, str(e))
@@ -347,7 +347,7 @@ while True:
                                 client.sendText(receiver, "TestSpeed")
                                 elapsed_time = time.time() - start
                                 client.sendText(receiver, "%sdetik" % (elapsed_time))
-                            elif 'spic' in text.lower():
+                            elif 'sp' in text.lower():
                                 try:
                                     key = eval(msg.contentMetadata["MENTION"])
                                     u = key["MENTIONEES"][0]["M"]
@@ -358,7 +358,7 @@ while True:
                                         client.sendImageWithURL(receiver, 'http://dl.profile.line.naver.jp/'+a)
                                 except Exception as e:
                                     client.sendText(receiver, str(e))
-                            elif 'scover' in text.lower():
+                            elif 'sc' in text.lower():
                                 try:
                                     key = eval(msg.contentMetadata["MENTION"])
                                     u = key["MENTIONEES"][0]["M"]
@@ -419,7 +419,7 @@ while True:
                                         nm5 += [nama[m]]
                                     client.mention(receiver, nm5)             
                                 client.sendText(receiver, "Members :"+str(jml))
-                            elif text.lower() == 'ceksider':
+                            elif text.lower() == 'Hai':
                                 try:
                                     del cctv['point'][receiver]
                                     del cctv['sidermem'][receiver]
@@ -429,13 +429,13 @@ while True:
                                 cctv['point'][receiver] = msg.id
                                 cctv['sidermem'][receiver] = ""
                                 cctv['cyduk'][receiver]=True
-                            elif text.lower() == 'offread':
+                            elif text.lower() == 'ngintip':
                                 if msg.to in cctv['point']:
                                     cctv['cyduk'][receiver]=False
                                     client.sendText(receiver, cctv['sidermem'][msg.to])
                                 else:
                                     client.sendText(receiver, "Heh belom di Set")
-                            elif text.lower == "papay":
+                            elif text.lower == "paibye":
                                 client.sendMessage(to, "Mencoba keluar dari group")
                                 client.leaveGroup(to)
                             elif text.lower() == 'mode:self':
@@ -548,7 +548,7 @@ while True:
                                 client.sendText(receiver, "TestSpeed")
                                 elapsed_time = time.time() - start
                                 client.sendText(receiver, "%sdetik" % (elapsed_time))
-                            elif 'spic' in text.lower():
+                            elif 'sp' in text.lower():
                                 try:
                                     key = eval(msg.contentMetadata["MENTION"])
                                     u = key["MENTIONEES"][0]["M"]
@@ -559,7 +559,7 @@ while True:
                                         client.sendImageWithURL(receiver, 'http://dl.profile.line.naver.jp/'+a)
                                 except Exception as e:
                                     client.sendText(receiver, str(e))
-                            elif 'scover' in text.lower():
+                            elif 'sc' in text.lower():
                                 try:
                                     key = eval(msg.contentMetadata["MENTION"])
                                     u = key["MENTIONEES"][0]["M"]
@@ -579,7 +579,7 @@ while True:
                                 pass
                             else:
                                 cctv['sidermem'][op.param1] += "\n~ " + Name
-                                pref=['eh ada','hai kak','aloo..','nah','lg ngapain','halo','sini kak']
+                                pref=['eh ada kak','hai kak','lg ngapain kak','halo kak','sini masuk kak','hayo ngintip','ayo sini gabung kak']
                                 client.sendText(op.param1, str(random.choice(pref))+' '+Name)
                         else:
                             pass
