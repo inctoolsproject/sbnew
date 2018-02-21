@@ -30,17 +30,17 @@ helpMessage ="""
 【13】 Apakah
 【14】 Sytr:
 【15】 Tr:
-【16】 Spict
-【17】 Scover
+【16】 Sp
+【17】 Sc
 【18】 Tagall
-【19】 Ceksider
-【20】 Offread
+【19】 Hai
+【20】 Ngintip
 【21】 Mode:self
 【22】 Mode:publik
 【23】 Restart
-【24】 Papay
+【24】 -------
 
-─┅═✥SatriaNew✥═┅─
+─┅═✥666✥═┅─
 """
 
 poll = LinePoll(client)
